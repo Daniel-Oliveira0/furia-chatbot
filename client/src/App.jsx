@@ -1,10 +1,9 @@
-import './App.css'
+import Header from './components/Header/Header.jsx';
 
 function App() {
   return (
-    <div>
-      <h1>FURIA Chatbot 🐺</h1>
-      <p>Fala comigo, fã da FURIA!</p>
+    <div className="app">
+      <Header />
     </div>
   );
 }
