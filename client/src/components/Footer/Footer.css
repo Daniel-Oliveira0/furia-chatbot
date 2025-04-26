@@ -15,7 +15,7 @@
 
 .slogan {
   font-style: italic;
-  color: #8f00ff;
+  color: #ffff;
   margin-bottom: 10px;
 }
 
@@ -25,7 +25,7 @@
 
 .social-icons a {
   margin: 0 10px;
-  color: #8f00ff;
+  color: #ffff;
   font-size: 1.5rem;
   transition: transform 0.3s ease;
 }

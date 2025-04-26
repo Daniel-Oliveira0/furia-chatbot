@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Main.css";
+import Menu from "./Menu/Menu"; 
 
 const Main = () => {
   const [messages, setMessages] = useState([]);
@@ -16,14 +17,18 @@ const Main = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim() === '') return;
-
-    setMessages([...messages, { text: input, sender: 'user' }]);
+    sendMessage(input, 'user');
     setInput('');
+  };
+
+  const sendMessage = (text, sender = 'user') => {
+    setMessages((prevMessages) => [...prevMessages, { text, sender }]);
   };
 
   return (
     <main className="main">
       <div className="chat-window">
+
         <div className="messages">
           {messages.map((msg, index) => (
             <div
@@ -34,6 +39,9 @@ const Main = () => {
             </div>
           ))}
         </div>
+
+        <Menu onOptionClick={sendMessage} />
+
         <form className="chat-input" onSubmit={handleSubmit}>
           <input
             type="text"

@@ -1,0 +1,26 @@
+.menu {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #0f0f0f; 
+  border-top: 2px solid #ffffff;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0 65px 0 0;
+  gap: 60px; 
+}
+
+.menu-item {
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu-item:hover {
+  color: #838080;
+}
