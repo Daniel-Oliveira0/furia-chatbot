@@ -9,11 +9,10 @@
   
   .chat-window {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     height: 70vh;
     background-color: #111111;
     border-radius: 10px;
-    /* box-shadow: 0 0 40px rgba(143, 0, 255, 0.5); */
     box-shadow: 0 0 40px white;
     display: flex;
     flex-direction: column;
@@ -24,7 +23,7 @@
   .message {
     max-width: 80%;
     padding: 8px 12px;
-    margin-top: 7px;
+    margin: 10px;
     border-radius: 8px;
     background-color: #222;
     color: white;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Main.css";
-import Menu from "./Menu/Menu"; 
+import Menu from "./Menu/Menu";
 
 const Main = () => {
   const [messages, setMessages] = useState([]);
@@ -25,10 +25,39 @@ const Main = () => {
     setMessages((prevMessages) => [...prevMessages, { text, sender }]);
   };
 
+  const handleMenuClick = (option) => {
+    let question = '';
+    let botResponse = '';
+  
+    switch (option) {
+      case "Agenda de Jogos":
+        question = "Quando é o próximo jogo da nossa FURIA? 😎";
+        botResponse = "Infelizmente a FURIA foi eliminada do PGL Major Bucharest 2025... 😓 Por enquanto, ainda não tem próximo jogo marcado, mas fica de olho que a tropa vai voltar com tudo!";
+        break;
+      case "Elenco":
+        question = "Quem são os nossos jogadores?";
+        botResponse = "A line da FURIA mudou, hein! Skullz e chelo deixaram a Lineup principal e agora a tropa tá com o coach brabo Side e com as etrelas: FalleN, KSCERATO e yuurih, e os reforços gringos Yekindar e Molodoy.";
+        break;
+      case "Notícias":
+        question = "O que está rolando de mais quente na FURIA? 🔥";
+        botResponse = "Fica ligado, Furioso! A última call foi pesada: Yekindar saiu da Liquid e veio fechar com a gente, e o Molodoy largou a AMKAL pra vestir a camisa pesada da FURIA. Agora é outro patamar, irmão!";
+        break;
+      default:
+        question = "O que você quer saber mais? 🤔";
+        botResponse = "Me diga mais para eu poder te ajudar! 😉";
+    }
+  
+    sendMessage(question, 'user');
+  
+    setTimeout(() => {
+      sendMessage(botResponse, 'bot');
+    }, 1000);
+  };
+  
+
   return (
     <main className="main">
       <div className="chat-window">
-
         <div className="messages">
           {messages.map((msg, index) => (
             <div
@@ -40,7 +69,7 @@ const Main = () => {
           ))}
         </div>
 
-        <Menu onOptionClick={sendMessage} />
+        <Menu onOptionClick={handleMenuClick} />
 
         <form className="chat-input" onSubmit={handleSubmit}>
           <input
