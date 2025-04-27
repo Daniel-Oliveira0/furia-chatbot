@@ -29,7 +29,9 @@ app.post("/ask", (req, res) => {
     answer = "A FURIA já conquistou grandes títulos no CS:GO, como a ESL Pro League Season 12: North America em 2020, DreamHack Open Summer 2020: North America também em 2020, e a Intel Extreme Masters XV – New York Online: North America em 2020!";
   }
 
-  res.json({ answer });
+  setTimeout(() => {
+    res.json({ answer });
+  }, 1000);
 });
 
 app.listen(PORT, () => {
