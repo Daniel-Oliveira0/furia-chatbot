@@ -23,7 +23,10 @@ const Main = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (input.trim() === '') return;
+    if (input.trim() === '') {
+      sendMessage("Por favor, digite algo para eu te ajudar! 😅", 'bot');
+      return;
+    };
 
     sendMessage(input, 'user');
 
@@ -35,6 +38,10 @@ const Main = () => {
         },
         body: JSON.stringify({ question: input }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Erro na resposta do servidor: ${response.status}`);
+      }
 
       const data = await response.json();
       sendMessage(data.answer, 'bot');
