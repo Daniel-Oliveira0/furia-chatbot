@@ -1,9 +1,7 @@
-const Menu = ({ onOptionClick }) => {
-  if (typeof onOptionClick !== 'function') {
-    console.error('Função onOptionClick não foi passada corretamente');
-    return null;
-  }
+import React from "react";
+import "./Menu.css";
 
+const Menu = ({ onOptionClick }) => { 
   const options = [
     "Agenda de Jogos",
     "Elenco",

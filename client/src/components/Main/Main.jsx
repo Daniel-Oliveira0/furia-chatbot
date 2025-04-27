@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Main.css";
 import Menu from "./Menu/Menu";
 
 const Main = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const messagesEndRef = useRef(null);
+  const messagesContainerRef = useRef(null);
 
   useEffect(() => {
     const welcomeMessage = {
@@ -16,17 +16,17 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTo({
+        top: messagesContainerRef.current.scrollHeight,
+        behavior: "smooth", // <- agora desce suavemente
+      });
     }
   }, [messages]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (input.trim() === '') {
-      sendMessage("Por favor, digite algo para eu te ajudar! 😅", 'bot');
-      return;
-    };
+    if (input.trim() === '') return;
 
     sendMessage(input, 'user');
 
@@ -38,10 +38,6 @@ const Main = () => {
         },
         body: JSON.stringify({ question: input }),
       });
-
-      if (!response.ok) {
-        throw new Error(`Erro na resposta do servidor: ${response.status}`);
-      }
 
       const data = await response.json();
       sendMessage(data.answer, 'bot');
@@ -89,7 +85,7 @@ const Main = () => {
   return (
     <main className="main">
       <div className="chat-window">
-        <div className="messages">
+        <div className="messages" ref={messagesContainerRef}>
           {messages.map((msg, index) => (
             <div
               key={index}
@@ -98,8 +94,6 @@ const Main = () => {
               {msg.text}
             </div>
           ))}
-
-          <div ref={messagesEndRef} />
         </div>
 
         <Menu onOptionClick={handleMenuClick} />
