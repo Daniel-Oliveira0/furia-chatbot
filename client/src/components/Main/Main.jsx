@@ -14,12 +14,31 @@ const Main = () => {
     setMessages([welcomeMessage]);
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (input.trim() === '') return;
+  
     sendMessage(input, 'user');
+  
+    try {
+      const response = await fetch('http://localhost:5000/ask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ question: input }),
+      });
+  
+      const data = await response.json();
+      sendMessage(data.answer, 'bot');
+    } catch (error) {
+      console.error('Erro na conexão com a IA:', error);
+      sendMessage('Deu ruim na conexão com o servidor! 😢', 'bot');
+    }
+  
     setInput('');
   };
+  
 
   const sendMessage = (text, sender = 'user') => {
     setMessages((prevMessages) => [...prevMessages, { text, sender }]);
