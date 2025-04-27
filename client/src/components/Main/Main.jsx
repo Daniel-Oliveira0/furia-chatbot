@@ -19,7 +19,7 @@ const Main = () => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollTo({
         top: messagesContainerRef.current.scrollHeight,
-        behavior: "smooth", // <- agora desce suavemente
+        behavior: "smooth", 
       });
     }
   }, [messages]);
@@ -27,9 +27,9 @@ const Main = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (input.trim() === '') return;
-
+  
     sendMessage(input, 'user');
-
+  
     try {
       const response = await fetch('http://localhost:5000/ask', {
         method: 'POST',
@@ -38,20 +38,29 @@ const Main = () => {
         },
         body: JSON.stringify({ question: input }),
       });
-
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
       const data = await response.json();
       sendMessage(data.answer, 'bot');
     } catch (error) {
-      console.error('Erro na conexão com a IA:', error);
-      sendMessage('Deu ruim na conexão com o servidor! 😢', 'bot');
+      console.error('Erro na conexão ou na resposta da IA:', error);
+      sendMessage('Deu ruim na conexão ou na resposta do servidor! 😢', 'bot');
     }
-
+  
     setInput('');
   };
-
+  
   const sendMessage = (text, sender = 'user') => {
+    if (typeof text !== 'string' || text.trim() === '') {
+      console.warn('Tentou enviar uma mensagem inválida:', text);
+      return;
+    }
     setMessages((prevMessages) => [...prevMessages, { text, sender }]);
   };
+  
 
   const handleMenuClick = (option) => {
     let question = '';
@@ -60,7 +69,7 @@ const Main = () => {
     switch (option) {
       case "Agenda de Jogos":
         question = "Quando é o próximo jogo da nossa FURIA? 😎";
-        botResponse = "Infelizmente a FURIA foi eliminada do PGL Major Bucharest 2025... 😓 Por enquanto, ainda não tem próximo jogo marcado, mas fica de olho que a tropa vai voltar com tudo!";
+        botResponse = "A tropa da FURIA tá se preparando pra uma sequência pesada de campeonatos, Furioso! Se liga: PGL Astana: de 10 a 18 de maio de 2025, IEM Dallas: de 23 a 25 de maio de 2025 e a tão sonhada BLAST Austin Major 2025: de 3 a 22 de junho de 2025. Fica de olho que vem muita bala pela frente!";
         break;
       case "Elenco":
         question = "Quem são os nossos jogadores?";
