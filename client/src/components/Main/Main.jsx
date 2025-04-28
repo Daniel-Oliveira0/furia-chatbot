@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Main.css";
 import Menu from "./Menu/Menu";
+import './MainResponsive.css'; 
 
 const Main = () => {
   const [messages, setMessages] = useState([]);
