@@ -6,6 +6,7 @@ import './MainResponsive.css';
 const Main = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
   const messagesContainerRef = useRef(null);
 
   useEffect(() => {
@@ -23,14 +24,15 @@ const Main = () => {
         behavior: "smooth", 
       });
     }
-  }, [messages]);
+  }, [messages, loading]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (input.trim() === '') return;
-  
+
     sendMessage(input, 'user');
-  
+    setLoading(true);
+
     try {
       const response = await fetch('http://localhost:5000/ask', {
         method: 'POST',
@@ -39,21 +41,23 @@ const Main = () => {
         },
         body: JSON.stringify({ question: input }),
       });
-  
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
+
       const data = await response.json();
       sendMessage(data.answer, 'bot');
     } catch (error) {
       console.error('Erro na conexão ou na resposta da IA:', error);
       sendMessage('Deu ruim na conexão ou na resposta do servidor! 😢', 'bot');
+    } finally {
+      setLoading(false);
     }
-  
+
     setInput('');
   };
-  
+
   const sendMessage = (text, sender = 'user') => {
     if (typeof text !== 'string' || text.trim() === '') {
       console.warn('Tentou enviar uma mensagem inválida:', text);
@@ -61,7 +65,6 @@ const Main = () => {
     }
     setMessages((prevMessages) => [...prevMessages, { text, sender }]);
   };
-  
 
   const handleMenuClick = (option) => {
     let question = '';
@@ -86,9 +89,11 @@ const Main = () => {
     }
 
     sendMessage(question, 'user');
+    setLoading(true);
 
     setTimeout(() => {
       sendMessage(botResponse, 'bot');
+      setLoading(false);
     }, 1000);
   };
 
@@ -104,6 +109,11 @@ const Main = () => {
               {msg.text}
             </div>
           ))}
+          {loading && (
+            <div className="message bot loading">
+              <div className="spinner"></div>
+            </div>
+          )}
         </div>
 
         <Menu onOptionClick={handleMenuClick} />

@@ -107,3 +107,28 @@
   background-color: #a64dff;
   transform: scale(1.05);
 }
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ffffff33;
+  border-top: 3px solid #8f00ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.message.bot.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
