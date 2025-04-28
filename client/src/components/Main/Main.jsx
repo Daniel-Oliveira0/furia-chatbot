@@ -6,7 +6,6 @@ import './MainResponsive.css';
 const Main = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [loading, setLoading] = useState(false);
   const messagesContainerRef = useRef(null);
 
   useEffect(() => {
@@ -14,7 +13,7 @@ const Main = () => {
       text: "Fala, Furioso! 👊 Pronto pra saber tudo sobre a FURIA? Manda sua pergunta aí!",
       sender: "bot",
     };
-    setMessages([welcomeMessage]);
+    setMessages([welcomeMessage]); // Adiciona a mensagem de boas-vindas ao estado inicial
   }, []);
 
   useEffect(() => {
@@ -24,14 +23,13 @@ const Main = () => {
         behavior: "smooth", 
       });
     }
-  }, [messages, loading]);
+  }, [messages]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (input.trim() === '') return;
 
     sendMessage(input, 'user');
-    setLoading(true);
 
     try {
       const response = await fetch('http://localhost:5000/ask', {
@@ -51,8 +49,6 @@ const Main = () => {
     } catch (error) {
       console.error('Erro na conexão ou na resposta da IA:', error);
       sendMessage('Deu ruim na conexão ou na resposta do servidor! 😢', 'bot');
-    } finally {
-      setLoading(false);
     }
 
     setInput('');
@@ -89,12 +85,19 @@ const Main = () => {
     }
 
     sendMessage(question, 'user');
-    setLoading(true);
 
     setTimeout(() => {
       sendMessage(botResponse, 'bot');
-      setLoading(false);
     }, 1000);
+  };
+
+  const handleClearChat = () => {
+    // Ao limpar o chat, preserva a mensagem de boas-vindas
+    const welcomeMessage = {
+      text: "Fala, Furioso! 👊 Pronto pra saber tudo sobre a FURIA? Manda sua pergunta aí!",
+      sender: "bot",
+    };
+    setMessages([welcomeMessage]); // Reseta as mensagens para a mensagem inicial
   };
 
   return (
@@ -109,12 +112,11 @@ const Main = () => {
               {msg.text}
             </div>
           ))}
-          {loading && (
-            <div className="message bot loading">
-              <div className="spinner"></div>
-            </div>
-          )}
         </div>
+
+        <button className="clear-button" onClick={handleClearChat}>
+          🗑️ Limpar Chat
+        </button>
 
         <Menu onOptionClick={handleMenuClick} />
 

@@ -132,3 +132,21 @@
   border: none;
   box-shadow: none;
 }
+
+.clear-button {
+  align-self: flex-end;
+  margin: 10px 0;
+  padding: 8px 12px;
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.clear-button:hover {
+  background-color: #ff7875;
+  transform: scale(1.05);
+}
