@@ -1,7 +1,7 @@
 .menu {
   width: 100%;
   padding: 10px 0;
-  background-color: #0f0f0f; 
+  background-color: #0f0f0f;
   border-top: 2px solid #ffffff;
 }
 
@@ -21,9 +21,14 @@
   padding: 10px 20px;
   font-weight: bold;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.2s;
 }
 
 .menu-item:hover {
   color: #838080;
+  background-color: #1c1c1c;
+}
+
+.menu-item:active {
+  transform: scale(0.95);
 }
