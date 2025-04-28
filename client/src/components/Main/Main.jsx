@@ -13,7 +13,7 @@ const Main = () => {
       text: "Fala, Furioso! 👊 Pronto pra saber tudo sobre a FURIA? Manda sua pergunta aí!",
       sender: "bot",
     };
-    setMessages([welcomeMessage]); // Adiciona a mensagem de boas-vindas ao estado inicial
+    setMessages([welcomeMessage]);
   }, []);
 
   useEffect(() => {
@@ -92,12 +92,11 @@ const Main = () => {
   };
 
   const handleClearChat = () => {
-    // Ao limpar o chat, preserva a mensagem de boas-vindas
     const welcomeMessage = {
       text: "Fala, Furioso! 👊 Pronto pra saber tudo sobre a FURIA? Manda sua pergunta aí!",
       sender: "bot",
     };
-    setMessages([welcomeMessage]); // Reseta as mensagens para a mensagem inicial
+    setMessages([welcomeMessage]); 
   };
 
   return (
