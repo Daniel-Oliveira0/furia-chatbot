@@ -1,13 +1,13 @@
 import Header from './components/Header/Header.jsx';
 import Main from './components/Main/Main.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import LiveStatus from './components/LiveStatus/LiveStatus.jsx';''
+import PlayerStatsModal from './components/PlayerStatsModal/PlayerStatsModal.jsx';
 function App() {
   return (
     <div className="app">
       <Header />
       <Main />
-      <LiveStatus/>
+      <PlayerStatsModal />
       <Footer/>
     </div>
   );
