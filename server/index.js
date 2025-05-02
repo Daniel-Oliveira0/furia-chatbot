@@ -1,11 +1,15 @@
-import express from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
+const furiaStatsRoute = require("./routes/furiaStats");
+
 
 const app = express();
 const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
+
+app.use(furiaStatsRoute);
 
 const removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
