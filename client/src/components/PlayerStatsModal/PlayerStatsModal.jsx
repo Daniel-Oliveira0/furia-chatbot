@@ -11,11 +11,11 @@ const PlayerStats = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const stats = [
-    { name: "FalleN", kd: "1.01", role: "AWPer", image: Fallen },
-    { name: "KSCERATO", kd: "1.18", role: "Rifler", image:  KSCERATO},
-    { name: "yuurih", kd: "1.07", role: "Entry/Support", image: Yuurih },
-    { name: "YEKINDAR", kd: "1.10", role: "Entry", image: YEKINDAR },
-    { name: "Molodoy", kd: "1.05", role: "Support", image: Molodoy },
+    { name: "FalleN", rating: "1.01**", role: "Entry/Mid-Caller", image: Fallen },
+    { name: "KSCERATO", rating: "1.19**", role: "Rifler/Support", image:  KSCERATO},
+    { name: "yuurih", rating: "1.18**", role: "Rifler", image: Yuurih },
+    { name: "YEKINDAR", rating: "0.00**", role: "Rifler", image: YEKINDAR },
+    { name: "Molodoy", rating: "0.00**", role: "AWPer", image: Molodoy },
   ];
 
   return (
@@ -39,7 +39,7 @@ const PlayerStats = () => {
                     <div className="card-back">
                       <h3>{player.name}</h3>
                       <p><strong>Função:</strong> {player.role}</p>
-                      <p><strong>K/D:</strong> {player.kd}</p>
+                      <p><strong>Rating 2.1:</strong> {player.rating}</p>
                     </div>
                   </div>
                 </div>
