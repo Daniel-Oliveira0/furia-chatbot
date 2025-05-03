@@ -7,35 +7,35 @@
   margin-top: auto;
 }
 
-.footer-content {
+.footer .footer-content {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.slogan {
+.footer .slogan {
   font-style: italic;
   color: #ffff;
   margin-bottom: 10px;
 }
 
-.social-icons {
+.footer .social-icons {
   margin: 10px 0;
 }
 
-.social-icons a {
+.footer .social-icons a {
   margin: 0 10px;
   color: #ffff;
   font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
 
-.social-icons a:hover {
+.footer .social-icons a:hover {
   transform: scale(1.2);
   color: #ffffff;
 }
 
-.credits {
+.footer .credits {
   font-size: 0.9rem;
   color: #666;
   margin-top: 15px;

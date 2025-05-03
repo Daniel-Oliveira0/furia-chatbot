@@ -1,82 +1,98 @@
 @media (max-width: 768px) {
-    .menu {
-      padding: 8px 0;
-    }
-  
-    .menu-list {
-      flex-direction: column;
-      gap: 10px;
-      padding: 0 20px;
-    }
-  
-    .menu-item {
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-  
-    .chat-window {
-      height: 75vh;
-      padding: 15px;
-    }
-  
-    .messages {
-      padding: 8px;
-      font-size: 14px;
-    }
-  
-    .input, .send-button {
-      font-size: 14px;
-    }
-  
-    .input {
-      padding: 10px;
-    }
-  
-    .send-button {
-      padding: 8px 16px;
-      font-size: 14px;
-    }
+  .main .menu {
+    padding: 8px 0;
   }
-  
-  @media (max-width: 425px) {
-    .menu {
-      width: 100%;
-      padding: 10px 0;
-    }
-  
-    .menu-list {
-      padding: 0;
-      justify-content: center;
-    }
-  
-    .menu-item {
-      width: 100%;
-      font-size: 13px;
-      padding: 10px 0;
-      text-align: center;
-    }
-  
-    .chat-window {
-      height: 80vh;
-      padding: 10px;
-    }
-  
-    .messages {
-      padding: 8px;
-      font-size: 14px;
-    }
-  
-    .input {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .send-button {
-      padding: 8px 12px;
-      font-size: 13px;
-    }
+
+  .main .menu-list {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
   }
-  
+
+  .main .menu-item {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .main .chat-window {
+    height: 75vh;
+    padding: 15px;
+  }
+
+  .main .messages {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .main .chat-input {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .main .input,
+  .main .send-button {
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .main .input {
+    padding: 10px;
+  }
+
+  .main .send-button {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .main .menu {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .main .menu-list {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .main .menu-item {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .main .chat-window {
+    height: 80vh;
+    padding: 10px;
+  }
+
+  .main .messages {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .main .chat-input {
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 6px;
+  }
+
+  .main .input {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .main .send-button {
+    padding: 8px;
+    font-size: 13px;
+    width: 320px;
+    box-sizing: border-box;
+  }
+}

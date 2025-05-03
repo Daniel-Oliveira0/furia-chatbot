@@ -5,7 +5,7 @@
   border-top: 2px solid #ffffff;
 }
 
-.menu-list {
+.menu .menu-list {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -14,7 +14,7 @@
   gap: 50px;
 }
 
-.menu-item {
+.menu .menu-item {
   color: #ffffff;
   background-color: #2a2a2a;
   border-radius: 20px;
@@ -24,11 +24,11 @@
   transition: all 0.2s;
 }
 
-.menu-item:hover {
+.menu .menu-item:hover {
   color: #838080;
   background-color: #1c1c1c;
 }
 
-.menu-item:active {
+.menu .menu-item:active {
   transform: scale(0.95);
 }
