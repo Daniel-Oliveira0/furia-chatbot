@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Main.css";
 import Menu from "./Menu/Menu";
-import './MainResponsive.css'; 
+import './MainResponsive.css';
 
 const Main = () => {
   const [messages, setMessages] = useState([]);
@@ -20,7 +20,7 @@ const Main = () => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollTo({
         top: messagesContainerRef.current.scrollHeight,
-        behavior: "smooth", 
+        behavior: "smooth",
       });
     }
   }, [messages]);
@@ -69,15 +69,15 @@ const Main = () => {
     switch (option) {
       case "Agenda de Jogos":
         question = "Quando é o próximo jogo da nossa FURIA? 😎";
-        botResponse = "A tropa da FURIA tá se preparando pra uma sequência pesada de campeonatos, Furioso! Se liga: PGL Astana: de 10 a 18 de maio de 2025, IEM Dallas: de 23 a 25 de maio de 2025 e a tão sonhada BLAST Austin Major 2025: de 3 a 22 de junho de 2025. Fica de olho que vem muita bala pela frente!";
+        botResponse = "Já anota aí, Furioso! O próximo confronto da FURIA é contra a The MongolZ pela PGL Astana 2025, no dia 10 de maio de 2025. Depois disso, vem mais pedreira: IEM Dallas e o tão esperado BLAST Austin Major 2025 de 3 a 22 de junho. Vem bala, vem emoção, vem FURIA!";
         break;
       case "Elenco":
         question = "Quem são os nossos jogadores?";
-        botResponse = "A line da FURIA mudou, hein! Skullz e chelo deixaram a Lineup principal e agora a tropa tá com o coach brabo Side e com as estrelas: FalleN, KSCERATO e yuurih, e os reforços gringos Yekindar e Molodoy.";
+        botResponse = "A line da FURIA mudou, hein! Skullz e chelo deixaram a Lineup principal e agora a tropa tá com o coach brabo Side e com as estrelas: Começando pelo Professor FalleN, KSCERATO e yuurih, e os reforços gringos Yekindar e Molodoy.";
         break;
       case "Notícias":
         question = "O que está rolando de mais quente na FURIA? 🔥";
-        botResponse = "Fica ligado, Furioso! A última call foi pesada: Yekindar saiu da Liquid e veio fechar com a gente, e o Molodoy largou a AMKAL pra vestir a camisa pesada da FURIA. Agora é outro patamar, irmão!";
+        botResponse = "Fica ligado, Furioso! A última call foi pesada: Yekindar saiu da Liquid e veio fechar com a gente, e o Molodoy largou a AMKAL pra vestir a camisa pesada da FURIA. E já vão jogadar juntos na PGL Astana 2025 contra a The MongolZ!";
         break;
       default:
         question = "O que você quer saber mais? 🤔";
@@ -96,7 +96,7 @@ const Main = () => {
       text: "Fala, Furioso! 👊 Pronto pra saber tudo sobre a FURIA? Manda sua pergunta aí!",
       sender: "bot",
     };
-    setMessages([welcomeMessage]); 
+    setMessages([welcomeMessage]);
   };
 
   return (

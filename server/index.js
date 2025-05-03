@@ -30,19 +30,19 @@ app.post("/ask", (req, res) => {
 
   if (matchKeyword("lineup", normalizedQuestion)) {
     responses.push(
-      "Atualmente, nossa lineup tá braba! Temos Fallen, KSCERATO, yuurih e as novas estrelas gringas Yekindar e Molodoy fortalecendo a tropa!"
+      "Agora nossa lineup tá braba! O Professor: Fallen, KSCERATO, yuurih e as novas estrelas gringas Yekindar e Molodoy fortalecendo a tropa!"
     );
   }
 
   if (matchKeyword("schedule", normalizedQuestion)) {
     responses.push(
-      "A FURIA tem uns compromissos pesados vindo por aí! Em breve, eles estarão competindo no PGL Astana de 10 a 18 de maio de 2025, e logo depois, a IEM Dallas de 23 a 25 de maio de 2025. E para fechar com chave de ouro, teremos a BLAST Austin Major 2025 entre 3 e 22 de junho de 2025! Preparado para ver a FURIA brilhar? 🔥"
+      "Vem muita emoção por aí, Furioso! A FURIA já tem data marcada pra entrar no servidor: começa dia 10 de maio contra a The MongolZ na PGL Astana 2025. Logo em seguida, eles encaram a IEM Dallas de 23 a 25 de maio. E segura o coração: o BLAST Austin Major rola de 3 a 22 de junho. É a tropa em busca da glória!"
     );
   }
 
   if (matchKeyword("news", normalizedQuestion)) {
     responses.push(
-      "As últimas news são brabas: Yekindar, vindo da Liquid, e Molodoy, da AMKAL, chegaram pra somar no elenco!"
+      "As últimas news são brabas: Yekindar, vindo da Liquid, e Molodoy, da AMKAL, chegaram pra somar no elenco e já vão estrear dia 10 contra o The MongolZ!"
     );
   }
 

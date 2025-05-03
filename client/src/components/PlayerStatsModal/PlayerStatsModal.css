@@ -1,96 +1,179 @@
 .stats-container {
-    text-align: center;
-    margin: 40px 0;
-  }
-  
-  .open-modal-btn {
-    padding: 12px 24px;
-    margin-top: 5px;
-    background-color: #8f00ff33;
-    color: #ffffff;
-    border: 1px solid #8f00ff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    font-style: italic;
-  }
-  
-  .open-modal-btn:hover {
-    background-color: #8f00ff;
-    color: #ffffff;
-  }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(24, 24, 24, 0.95);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    backdrop-filter: blur(3px);
-  }
-  
-  .modal {
-    background-color: #181818;
-    border: 1px solid #8f00ff;
-    padding: 30px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 0 20px rgba(143, 0, 255, 0.3);
-    animation: fadeIn 0.3s ease-in-out;
-    color: #ffffff;
-  }
-  
-  .modal h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #8f00ff;
-    border-bottom: 1px solid #8f00ff;
-    padding-bottom: 10px;
-  }
-  
-  .modal ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-  }
-  
-  .modal li {
-    margin-bottom: 12px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #e0e0e0;
-  }
-  
-  .modal li strong {
-    color: #8f00ff;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    color: #cccccc;
-    transition: color 0.2s;
-  }
-  
-  .close-btn:hover {
-    color: #8f00ff;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  
+  text-align: center;
+  margin: 40px 0;
+}
+
+.open-modal-btn {
+  padding: 12px 24px;
+  margin-top: 5px;
+  background-color: #ffffff11;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-style: italic;
+}
+
+.open-modal-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 24, 24, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(3px);
+}
+
+.modal {
+  background-color: #181818;
+  border: 1px solid #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 650px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  color: #ffffff;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 10px;
+}
+
+.modal ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.modal li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+.modal li strong {
+  color: #ffffff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #cccccc;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #ffffff;
+}
+
+.player-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.player-card {
+  background-color: #222;
+  border: 1px solid #ffffff88;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s;
+  text-align: center;
+  width: 200px;
+  height: 250px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; 
+}
+
+.player-card:hover {
+  transform: translateY(-4px);
+}
+
+.player-card h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease-in-out; 
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.player-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-front {
+  background-color: #111;
+}
+
+.card-back {
+  background-color: #222;
+  transform: rotateY(180deg);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px; 
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
