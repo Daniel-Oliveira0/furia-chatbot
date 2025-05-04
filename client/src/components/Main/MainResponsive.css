@@ -1,54 +1,3 @@
-@media (max-width: 768px) {
-  .main .menu {
-    padding: 8px 0;
-  }
-
-  .main .menu-list {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-  }
-
-  .main .menu-item {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    box-sizing: border-box;
-  }
-
-  .main .chat-window {
-    height: 80vh;
-    padding: 15px;
-  }
-
-  .main .messages {
-    padding: 8px;
-    font-size: 14px;
-  }
-
-  .main .chat-input {
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 25px;
-  }
-
-  .main .input,
-  .main .send-button {
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .main .input {
-    padding: 10px;
-  }
-
-  .main .send-button {
-    padding: 10px;
-  }
-}
-
 @media (max-width: 425px) {
   .main .menu {
     width: 100%;
@@ -68,7 +17,7 @@
   }
 
   .main .chat-window {
-    height: 80vh;
+    height: 90vh;
     padding: 10px;
   }
 
@@ -93,7 +42,61 @@
   .main .send-button {
     padding: 8px;
     font-size: 13px;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     box-sizing: border-box;
+    align-self: center;
   }
 }
+
+@media (max-width: 768px) {
+  .main .menu {
+    padding: 8px 0;
+  }  
+
+  .main .menu-list {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }  
+
+  .main .menu-item {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+  }  
+
+  .main .chat-window {
+    height: 90vh;
+    padding: 15px;
+  }  
+
+  .main .messages {
+    padding: 8px;
+    font-size: 14px;
+  }  
+
+  .main .chat-input {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }  
+
+  .main .input,
+  .main .send-button {
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }  
+
+  .main .input {
+    padding: 10px;
+  }  
+
+  .main .send-button {
+    padding: 10px;
+  }  
+}  
+

@@ -73,7 +73,7 @@ const Main = () => {
         break;
       case "Elenco":
         question = "Quem são os nossos jogadores?";
-        botResponse = "A line da FURIA mudou, hein! Skullz e chelo deixaram a Lineup principal e agora a tropa tá com o coach brabo Side e com as estrelas: Começando pelo Professor FalleN, KSCERATO e yuurih, e os reforços gringos Yekindar e Molodoy.";
+        botResponse = "A line da FURIA mudou, hein! Skullz e chelo deixaram a Line-up principal e agora a tropa tá com o coach brabo Side e com as estrelas: Começando pelo Professor FalleN, KSCERATO e yuurih, e os reforços gringos Yekindar e Molodoy.";
         break;
       case "Notícias":
         question = "O que está rolando de mais quente na FURIA? 🔥";
