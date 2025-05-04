@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
-import { FaInstagram, FaTwitter, FaTwitch } from 'react-icons/fa';
+import { FaInstagram, FaTwitch } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6'; // ícone do X (ex-Twitter)
 
 const Footer = () => {
   return (
@@ -9,9 +10,9 @@ const Footer = () => {
         <p className="slogan">Aqui é FURIA!</p>
 
         <div className="social-icons">
-          <a href="https://www.instagram.com/furiagg" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="https://x.com/FURIA?t=iiYZvFhvR2AkqZuEv9fsIw&s=09" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-          <a href="https://www.twitch.tv/furiatv" target="_blank" rel="noopener noreferrer"><FaTwitch /></a>
+          <a className="instagram" href="https://www.instagram.com/furiagg" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          <a className="x" href="https://x.com/FURIA?t=iiYZvFhvR2AkqZuEv9fsIw&s=09" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
+          <a className="twitch" href="https://www.twitch.tv/furiatv" target="_blank" rel="noopener noreferrer"><FaTwitch /></a>
         </div>
 
         <p className="credits">Desenvolvido por Daniel Vilela — Desafio FURIA</p>
