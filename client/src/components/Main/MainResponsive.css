@@ -6,7 +6,7 @@
   .main .menu-list {
     flex-direction: column;
     gap: 10px;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .main .menu-item {
@@ -18,7 +18,7 @@
   }
 
   .main .chat-window {
-    height: 75vh;
+    height: 80vh;
     padding: 15px;
   }
 
@@ -30,6 +30,7 @@
   .main .chat-input {
     flex-direction: column;
     gap: 8px;
+    margin-top: 25px;
   }
 
   .main .input,

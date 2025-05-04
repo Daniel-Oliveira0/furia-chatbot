@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./PlayerStatsModal.css";
+import "./PlayerStatsModalResponsive.css";
 
 import Fallen from "../../assets/fallen.webp";
 import KSCERATO from "../../assets/kscerato.webp";
